@@ -8,8 +8,6 @@
 ## How to use
 
 ```bash
-mkdir keys
-
 go test -v ./test -run ^TestSaveKeys$
 go test -v ./test -run ^TestLoadKeys$
 ```
