@@ -8,8 +8,7 @@ import (
 	"github.com/JihunSKKU/HE-CCFD/lattigo_key"
 )
 
-func TestSaveContext(t *testing.T) {
-	// TestSaveContext tests the SaveContext function.
+func TestSaveKeys(t *testing.T) {
 	params, btparams := initBtParams()
 	// params := initParams()
 	baseTime := time.Now()
@@ -18,28 +17,28 @@ func TestSaveContext(t *testing.T) {
 
 	fmt.Println("Make context time: ", elapsedTime)
 
-	// Save context
-	err := ctx.SaveContext("../context/ctx")
+	// SaveKeys
+	err := ctx.SaveKeys("../keys")
 	if err != nil {
-		t.Fatalf("Failed to save context: %v", err)
+		t.Fatalf("Failed to save keys: %v", err)
 	}	
 }
 
-func TestLoadContext(t *testing.T) {
-	// TestLoadContext tests the LoadContext function.
-	// Load context
+func TestLoadKeys(t *testing.T) {
+	// TestLoadKeys tests the LoadKeys function.
+	// Load Keys
 	baseTime := time.Now()
-	ctx, err := lattigo_key.LoadContext("../context/serialized_ctx")
+	ctx, err := lattigo_key.LoadKeys("../keys")
 	if err != nil {
-		t.Fatalf("Failed to load context: %v", err)
+		t.Fatalf("Failed to load Keys: %v", err)
 	}
 	elapsedTime := time.Since(baseTime)
 
-	fmt.Println("Load context time: ", elapsedTime)
+	fmt.Println("Load Keys time: ", elapsedTime)
 
-	// Check context
+	// Check Keys
 	if ctx == nil {
-		t.Fatal("Context is nil")
+		t.Fatal("Keys is nil")
 	}
 
 	// Print key sizes

@@ -8,6 +8,8 @@
 ## How to use
 
 ```bash
-go test -v ./test -run ^TestSaveContext$
-go test -v ./test -run ^TestLoadContext$
+mkdir keys
+
+go test -v ./test -run ^TestSaveKeys$
+go test -v ./test -run ^TestLoadKeys$
 ```
