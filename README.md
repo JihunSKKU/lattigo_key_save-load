@@ -11,3 +11,7 @@
 go test -v ./test -run ^TestSaveKeys$
 go test -v ./test -run ^TestLoadKeys$
 ```
+
+## Caption
+
+현재 불러온 btpKeys로 bootstrapping 연산이 되지 않아 bug 수정중입니다.
